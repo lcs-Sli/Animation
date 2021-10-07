@@ -45,7 +45,7 @@ canvas.translate(to: Point(x: canvas.width / 2,
                            y: canvas.height / 2))
 
 // Show a grid
-canvas.drawAxes(withScale: true, by: 20, color: .black)
+canvas.drawAxes(withScale: true, by: 50, color: .purple)
 
 /*:
  ## Add your code
@@ -58,20 +58,36 @@ canvas.drawAxes(withScale: true, by: 20, color: .black)
 
 // Begin writing your code below (you can remove the examples shown)
 
-// Draw a circle, using the canvas object directly
-canvas.drawEllipse(at: Point(x: 100, y: 100), width: 25, height: 25)
+// Make the fill white
+canvas.fillColor = .white
+canvas.borderColor = .black
+canvas.drawShapesWithBorders = true
+//Draw panda's head
+canvas.drawEllipse(at: Point(x: 0, y: 0), width: 100, height: 100)
 
-// Draw a vertical line, up and to the left
-p.drawTo(dx: -25, dy: 50)
+//Draw right eye
+canvas.drawEllipse(at: Point(x: 20, y: 20), width: 20, height: 30)
 
-// Go back to origin
-p.goToOrigin()
+//Draw left eye
+canvas.drawEllipse(at: Point(x: -20, y: 20), width: 20, height: 30)
 
-// Change the pen color
-p.penColor = .red
+//Draw the left pupil
+canvas.fillColor = .black
+canvas.borderColor = .black
+canvas.drawShapesWithBorders = true
+canvas.drawEllipse(at: Point(x: 20, y:10), width: 13, height: 13)
 
-// Draw a curve, down and to the right
-p.addArc(radius: 50, angle: -45)
+//Draw the right pupil
+canvas.fillColor = .black
+canvas.borderColor = .black
+canvas.drawShapesWithBorders = true
+canvas.drawEllipse(at: Point(x: -20, y:10), width: 13, height: 13)
+
+//Draw the nose
+canvas.fillColor = .black
+canvas.borderColor = .black
+canvas.drawShapesWithBorders = true
+canvas.drawEllipse(at: Point(x: 2, y: -10), width: 20, height: 16)
 
 /*:
  ## Show the Live View
