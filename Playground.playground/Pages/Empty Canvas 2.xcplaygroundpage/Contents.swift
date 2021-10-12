@@ -57,34 +57,32 @@ canvas.drawAxes(withScale: true, by: 20, color: .black)
  */
 
 // Begin writing your code below (you can remove the examples shown)
+//Define a list of verticles
+var triangle: [Point] = []
+triangle.append (Point (x: 120, y: 200)) //A
+triangle.append (Point (x: 140, y: 180)) //A
+triangle.append (Point (x: 0, y: 20)) //A
 
-// Draw a circle, using the canvas object directly
-canvas.drawEllipse(at: Point(x: 100, y: 100), width: 25, height: 25)
+//Draw triangle
+canvas .drawCustomShape(with: triangle)
 
-// Draw a vertical line, up and to the left
-p.drawTo(dx: -25, dy: 50)
+var triangleB: [Point] = []
+triangleB.append (Point (x: 160, y: 160)) //B
+triangleB.append (Point (x: 180, y: 140)) //B
+triangleB.append (Point (x: 0, y: 20)) //B
 
-// Go back to origin
-p.goToOrigin()
+canvas.drawCustomShape(with: triangleB)
 
-// Change the pen color
-p.penColor = .red
+var triangleC: [Point] = []
+triangleC.append (Point (x: 200, y: 120)) //C
+triangleC.append (Point (x: 220, y: 100)) //C
+triangleC.append (Point (x: 0, y: 20)) //C
 
-// Draw a curve, down and to the right
-p.addArc(radius: 50, angle: -45)
+canvas.drawCustomShape(with: triangleC)
 
-/*:
- ## Show the Live View
- Don't see any results?
- 
- Remember to show the Live View (1 then 2):
- 
- ![timeline](timeline.png "Timeline")
+var triangleD: [Point] = []
+triangleD.append (Point (x: 220, y: 70)) //D
+triangleD.append (Point (x: 240, y: 50)) //D
+triangleD.append (Point (x: 0, y: 20)) //D
 
- ## Use source control
- To keep your work organized, receive feedback, and earn a high grade in this course, regular use of source control is a must.
- 
- Please commit and push your work often.
- 
- ![source_control](source-control.png "Source Control")
- */
+canvas.drawCustomShape(with: triangleD)

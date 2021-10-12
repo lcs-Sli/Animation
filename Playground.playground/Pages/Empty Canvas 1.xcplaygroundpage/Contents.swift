@@ -87,7 +87,7 @@ canvas.drawEllipse(at: Point(x: -20, y:10), width: 13, height: 13)
 canvas.fillColor = .black
 canvas.borderColor = .black
 canvas.drawShapesWithBorders = true
-canvas.drawEllipse(at: Point(x: 2, y: -10), width: 20, height: 16)
+canvas.drawEllipse(at: Point(x: 0, y: -10), width: 20, height: 16)
 
 /*:
  ## Show the Live View
