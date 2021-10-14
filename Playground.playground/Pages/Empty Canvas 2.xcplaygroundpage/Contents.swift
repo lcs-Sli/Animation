@@ -59,7 +59,7 @@ canvas.translate(to: Point(x: canvas.width / 2,
 // Begin writing your code below (you can remove the examples shown)
 //Define a list of verticles
 var triangle: [Point] = []
-triangle.append (Point (x: 130, y: 220)) //A
+triangle.append (Point (x: 110, y: 220)) //A
 triangle.append (Point (x: 150, y: 200)) //A
 triangle.append (Point (x: 0, y: 20)) //A
 
@@ -67,15 +67,15 @@ triangle.append (Point (x: 0, y: 20)) //A
 canvas .drawCustomShape(with: triangle)
 
 var triangleB: [Point] = []
-triangleB.append (Point (x: 200, y: 150)) //B
-triangleB.append (Point (x: 180, y: 200)) //B
+triangleB.append (Point (x: 220, y: 150)) //B
+triangleB.append (Point (x: 200, y: 180)) //B
 triangleB.append (Point (x: 0, y: 20)) //B
 
 canvas.drawCustomShape(with: triangleB)
 
 var triangleC: [Point] = []
-triangleC.append (Point (x: 200, y: 120)) //C
-triangleC.append (Point (x: 220, y: 100)) //C
+triangleC.append (Point (x: 220, y: 120)) //C
+triangleC.append (Point (x: 220, y: 90)) //C
 triangleC.append (Point (x: 0, y: 20)) //C
 
 canvas.drawCustomShape(with: triangleC)
@@ -137,14 +137,14 @@ triangleK.append (Point (x:0, y:20 )) //K
 canvas.drawCustomShape(with: triangleK)
 
 var triangleL: [Point] = []
-triangleL.append (Point (x: -180, y: 160)) //L
-triangleL.append (Point (x: -200, y: 140)) //L
+triangleL.append (Point (x: -220, y: 150)) //L
+triangleL.append (Point (x: -200, y: 180)) //L
 triangleL.append (Point (x: 0, y: 20)) //L
 
 canvas.drawCustomShape(with: triangleL)
 
 var triangleM: [Point] = []
-triangleM.append (Point (x: -200, y: 120)) //M
+triangleM.append (Point (x: -220, y: 120)) //M
 triangleM.append (Point (x: -220, y: 100)) //M
 triangleM.append (Point (x: 0, y: 20)) //M
 
@@ -159,7 +159,7 @@ canvas.drawCustomShape(with: triangleN)
 
 var triangleO: [Point] = []
 triangleO.append (Point (x: -220, y: 30)) //O
-triangleO.append (Point (x: -240, y: 10)) //O
+triangleO.append (Point (x: -200, y: 10)) //O
 triangleO.append (Point (x: 0, y: 20)) //O
 
 canvas.drawCustomShape(with: triangleO)
@@ -222,34 +222,22 @@ triangleW.append (Point (x: 0, y: 20)) //W
 canvas.drawCustomShape(with: triangleW)
 
 
-var triangleX: [Point] = []
-triangleX.append (Point (x: -45, y: 180)) //X
-triangleX.append (Point (x: -80, y: 185)) //X
-triangleX.append (Point (x: 0, y: 20)) //X
-
-canvas.drawCustomShape(with: triangleX)
-
-
-var triangleY: [Point] = []
-triangleY.append (Point (x: 45, y: 180)) //Y
-triangleY.append (Point (x: 80, y: 185)) //Y
-triangleY.append (Point (x: 0, y: 20)) //Y
-
-canvas.drawCustomShape(with: triangleY)
 
 //Draw left curve of the heart
 p.lineWidth = 54
 p.penColor = .white
 canvas.drawCurve(from: Point(x: 0, y: 90),
-                 to: Point(x: 0, y: -230),
-                 control1: Point(x: -280, y: 480),
-                 control2: Point(x: -290, y: -200),
+                 to: Point(x: 0, y: -240),
+                 control1: Point(x: -335, y: 500),
+                 control2: Point(x: -290, y: -190),
                  showControlPoints: false)
 
+//Draw right curve of the heart
+
 canvas.drawCurve(from: Point(x: 0, y: 90),
-                 to: Point(x: 0, y: -230),
-                 control1: Point(x: 280, y: 480),
-                 control2: Point(x: 290, y: -200),
+                 to: Point(x: 0, y: -240),
+                 control1: Point(x: 335, y: 500),
+                 control2: Point(x: 290, y: -190),
                  showControlPoints: false)
 
 
