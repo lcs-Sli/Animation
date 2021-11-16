@@ -58,6 +58,17 @@ canvas.drawAxes(withScale: true, by: 50, color: .purple)
 
 // Begin writing your code below (you can remove the examples shown)
 
+
+//Draw the left ear
+canvas.drawEllipse(at: Point(x: -40, y: 30), width: 55, height: 50)
+
+canvas.fillColor = .white
+canvas.drawEllipse(at: Point(x: -40, y: 30), width: 30, height: 30)
+
+//Draw the right ear
+canvas.drawEllipse(at: Point(x: 40, y: 30), width: 55, height: 50)
+
+
 // Make the fill white
 canvas.fillColor = .white
 canvas.borderColor = .black
@@ -66,28 +77,37 @@ canvas.drawShapesWithBorders = true
 canvas.drawEllipse(at: Point(x: 0, y: 0), width: 100, height: 100)
 
 //Draw right eye
-canvas.drawEllipse(at: Point(x: 20, y: 20), width: 20, height: 30)
+canvas.fillColor = .black
+canvas.borderColor = .black
+canvas.drawEllipse(at: Point(x: 25, y: 10), width: 36, height: 28)
 
 //Draw left eye
-canvas.drawEllipse(at: Point(x: -20, y: 20), width: 20, height: 30)
+canvas.drawEllipse(at: Point(x: -25, y: 10), width: 36, height: 28)
+canvas.fillColor = .black
+canvas.borderColor = .black
+canvas.drawShapesWithBorders = true
 
 //Draw the left pupil
-canvas.fillColor = .black
-canvas.borderColor = .black
+canvas.fillColor = .white
+canvas.borderColor = .white
 canvas.drawShapesWithBorders = true
-canvas.drawEllipse(at: Point(x: 20, y:10), width: 13, height: 13)
+canvas.drawEllipse(at: Point(x: 20, y:10), width: 18, height: 15)
 
 //Draw the right pupil
-canvas.fillColor = .black
-canvas.borderColor = .black
+canvas.fillColor = .white
+canvas.borderColor = .white
 canvas.drawShapesWithBorders = true
-canvas.drawEllipse(at: Point(x: -20, y:10), width: 13, height: 13)
+canvas.drawEllipse(at: Point(x: -20, y:10), width: 18, height: 15)
 
 //Draw the nose
 canvas.fillColor = .black
 canvas.borderColor = .black
 canvas.drawShapesWithBorders = true
-canvas.drawEllipse(at: Point(x: 0, y: -10), width: 20, height: 16)
+canvas.drawEllipse(at: Point(x: 0, y: -10), width: 30, height: 16)
+
+
+
+
 
 /*:
  ## Show the Live View
