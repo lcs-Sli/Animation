@@ -135,24 +135,22 @@ canvas.drawShapesWithBorders = true
 canvas.drawEllipse(at: Point(x: 0, y: -10), width: 30, height: 16)
 
 //Draw the mouth
-canvas.fillColor = .black
-p.goto(dx: 0, dy: -20)
-p.drawTo(dx: -20, dy: -10)
-p.goto(dx: 20, dy: 10)
-p.drawTo(dx: 20, dy: -10)
+canvas.drawCurve(from: Point(x: 0, y: -20), to: Point(x: -20, y: -30), control1: Point(x: -10, y:-30), control2: Point(x: -10, y: -30))
+canvas.drawCurve(from: Point(x: 0, y: -20), to: Point(x: 20, y: -30), control1: Point(x: 10, y:-30), control2: Point(x: 10, y: -30))
+
 
 //Red circles under eyes:
 //left:
 canvas.fillColor = .red
 canvas.borderColor = .red
 canvas.drawShapesWithBorders = true
-canvas.drawEllipse(at: Point(x: -50, y: 20), width: 30, height: 10)
+canvas.drawEllipse(at: Point(x: -30, y: -10), width: 30, height: 10)
 
 //right:
 canvas.fillColor = .red
 canvas.borderColor = .red
 canvas.drawShapesWithBorders = true
-canvas.drawEllipse(at: Point(x: 12, y:20), width: 30, height: 10)
+canvas.drawEllipse(at: Point(x: 30, y:-10), width: 30, height: 10)
 
 //Draw the grass with gradients
 for value in stride(from: 0,
