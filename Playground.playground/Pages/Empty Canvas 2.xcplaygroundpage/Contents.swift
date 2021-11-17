@@ -73,7 +73,7 @@ triangleB.append (Point (x: 0, y: 20)) //B
 
 canvas.drawCustomShape(with: triangleB)
 
-var triangleC: [Point] = []
+var triangleC: [Point] = 
 triangleC.append (Point (x: 220, y: 120)) //C
 triangleC.append (Point (x: 220, y: 90)) //C
 triangleC.append (Point (x: 0, y: 20)) //C
