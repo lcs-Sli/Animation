@@ -7,8 +7,8 @@
  
  Set the size of your desired canvas by adjusting the constants on lines 10 and 11.
  */
-let preferredWidth = 300
-let preferredHeight = 600
+let preferredWidth = 400
+let preferredHeight = 400
 /*:
  ## Required code
  
@@ -25,31 +25,57 @@ let canvas = Canvas(width: preferredWidth, height: preferredHeight)
 
 // Show the canvas in the playground's live view
 PlaygroundPage.current.liveView = canvas
-/*:
- ## Add your code
- 
- Beginning on line 38, write a meaningful comment.
- 
- You can remove the code on line 39 and begin writing your own code.
- 
- [Documentation](http://russellgordon.ca/CanvasGraphics/Documentation/) is available.
- */
+//Show a grid
+canvas.drawAxes(withScale: true, by: 50, color: .black)
 
-// Replace this comment with your first comment – what is the goal of the code you're about to write?
-canvas.drawRectangle(at: Point(x: 50, y: 75), width: 100, height: 200)
+//Turn on high performance mode
+canvas.highPerformance = true
 
-/*:
- ## Show the Assistant Editor
- Don't see any results?
- 
- Remember to show the Assistant Editor (1), and then switch to Live View (2):
- 
- ![timeline](timeline.png "Timeline")
+// A loop to express the 0, 50, 100, 150...pattern
+for banana in stride(from: 0,
+                        through: 400,
+                        by: 50) {
+    banana
+    
+    //Draw the line from and to the points shown in our plan
+    canvas.drawLine(from: Point(x:banana,  y: 0),
+                    to: Point (x: 400, y: banana))
+}
 
- ## Use source control
- To keep your work organized, receive feedback, and earn a high grade in this course, regular use of source control is a must.
- 
- Please commit and push your work often.
- 
- ![source_control](source-control.png "Source Control")
- */
+// A loop to express the 0, 50, 100, 150...pattern
+canvas.lineColor = .purple
+for banana in stride(from: 400,
+                        through: 0,
+                        by: -50) {
+    banana
+    
+    //Draw the line from and to the points shown in our plan
+    canvas.drawLine(from: Point(x:0, y: banana),
+                    to: Point (x: banana, y: 400))
+}
+
+// A loop to express the 0, 50, 100, 150...pattern
+canvas.lineColor = .red
+for banana in stride(from: 400,
+                        through: 0,
+                        by: -50) {
+    banana
+    
+    //Draw the line from and to the points shown in our plan
+    canvas.drawLine(from: Point(x:banana, y: 0),
+                    to: Point (x: 0, y:400 - banana))
+}
+
+// A loop to express the 0, 50, 100, 150...pattern
+canvas.lineColor = .green
+for banana in stride(from: 400,
+                        through: 0,
+                        by: -50) {
+    banana
+    
+    //Draw the line from and to the points shown in our plan
+    canvas.drawLine(from: Point(x:400, y: banana),
+                    to: Point (x: 400-banana, y:400))
+}
+//Turn off high performance mode
+canvas.highPerformance = false

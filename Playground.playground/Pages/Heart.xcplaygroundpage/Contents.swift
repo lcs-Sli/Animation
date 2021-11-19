@@ -47,15 +47,6 @@ canvas.translate(to: Point(x: canvas.width / 2,
 //// Show a grid
 //canvas.drawAxes(withScale: true, by: 20, color: .black)
 
-/*:
- ## Add your code
- 
- Beginning on line 61, you can add your own code.
-  
- [Documentation](http://russellgordon.ca/CanvasGraphics/Documentation/) is available.
-
- */
-
 // Begin writing your code below (you can remove the examples shown)
 //Define a list of verticles
 var triangle: [Point] = []

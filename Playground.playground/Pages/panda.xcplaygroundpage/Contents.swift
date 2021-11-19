@@ -4,8 +4,8 @@
  
  Set the size of your desired canvas by adjusting the constants on lines 7 and 8.
  */
-let preferredWidth = 600
-let preferredHeight = 600
+let preferredWidth = 400
+let preferredHeight = 400
 /*:
  ## Required code
  
@@ -57,6 +57,57 @@ canvas.drawAxes(withScale: true, by: 50, color: .purple)
  */
 
 // Begin writing your code below (you can remove the examples shown)
+
+//Draw the green background with gradients
+canvas.highPerformance = true
+canvas.defaultLineWidth = 5
+for value in stride(from: 20,
+                    through: 80,
+                    by: 1) {
+    //Set the color
+    let currentColor = Color(hue: 98,
+                             saturation: 100,
+                             brightness: value,
+                             alpha: 100)
+    canvas.lineColor = currentColor
+    
+    
+    //Draw a line
+    
+    canvas.drawLine(from: Point(x: -200, y: value * 5 - 400), to: Point(x: 200, y: value * 5 - 400 ))
+
+
+}
+
+//Draw the blue background with gradients
+canvas.highPerformance = true
+canvas.defaultLineWidth = 5
+for value in stride(from: 20,
+                    through: 80,
+                    by: 1) {
+    //Set the color
+    let currentColor = Color(hue: 200,
+                             saturation: 100,
+                             brightness:value,
+                             alpha: 100)
+    canvas.lineColor = currentColor
+    
+    
+    //Draw a line
+    
+    canvas.drawLine(from: Point(x: -200, y: value * 5 - 200), to: Point(x: 200, y: value * 5 - 200 ))
+
+
+}
+
+//Draw the clouds
+
+
+
+
+
+
+
 
 
 //Draw the left ear
@@ -135,9 +186,9 @@ canvas.drawShapesWithBorders = true
 canvas.drawEllipse(at: Point(x: 0, y: -10), width: 30, height: 16)
 
 //Draw the mouth
+p.penColor = .black
 canvas.drawCurve(from: Point(x: 0, y: -20), to: Point(x: -20, y: -30), control1: Point(x: -10, y:-30), control2: Point(x: -10, y: -30))
 canvas.drawCurve(from: Point(x: 0, y: -20), to: Point(x: 20, y: -30), control1: Point(x: 10, y:-30), control2: Point(x: 10, y: -30))
-
 
 //Red circles under eyes:
 //left:
@@ -152,22 +203,13 @@ canvas.borderColor = .red
 canvas.drawShapesWithBorders = true
 canvas.drawEllipse(at: Point(x: 30, y:-10), width: 30, height: 10)
 
-//Draw the grass with gradients
-for value in stride(from: 0,
-                    through: 100,
-                    by: 1) {
-    //Set the color
-    let currentColor = Color(hue: 120+value,
-                             saturation: 80, brightness: 80, alpha: 100)
-    canvas.lineColor = currentColor
-    
-    //Draw a line
-    canvas.drawLine(from: Point(x: value, y: 100), to: Point(x: value, y: 200))
-    //Obtain the x value
-    //Change values between 0-100 to equivalant between 150 to 300
-    let scaledX = map(value: Double(value), fromLower: 0, fromUpper: 100, toLower: -250, toUpper: -100)
-    scaledX
-}
+
+canvas.highPerformance = false
+
+
+
+
+
 /*:
  ## Show the Live View
  Don't see any results?
