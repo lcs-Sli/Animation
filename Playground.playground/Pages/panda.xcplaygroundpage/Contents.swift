@@ -100,16 +100,6 @@ for value in stride(from: 20,
 
 }
 
-//Draw the clouds
-
-
-
-
-
-
-
-
-
 //Draw the left ear
 canvas.drawEllipse(at: Point(x: -40, y: 30), width: 55, height: 50)
 
@@ -203,12 +193,31 @@ canvas.borderColor = .red
 canvas.drawShapesWithBorders = true
 canvas.drawEllipse(at: Point(x: 30, y:-10), width: 30, height: 10)
 
+//Draw the clouds
+canvas.fillColor = .white
+canvas.borderColor = .white
+canvas.drawShapesWithBorders = true
+canvas.drawEllipse(at: Point(x: 0, y: 120), width: 40, height: 30)
+canvas.drawEllipse(at: Point(x: 20, y: 120), width: 40, height: 30)
+canvas.drawEllipse(at: Point(x: 30, y: 100), width: 40, height: 30)
+canvas.drawEllipse(at: Point(x: -10, y: 100), width: 40, height: 30)
+canvas.drawEllipse(at: Point(x: 10, y: 100), width: 40, height: 30)
+
+
+canvas.drawEllipse(at: Point(x: -120, y: 150), width: 40, height: 30)
+canvas.drawEllipse(at: Point(x: -100, y: 150), width: 40, height: 30)
+canvas.drawEllipse(at: Point(x: -130, y: 130), width: 40, height: 30)
+canvas.drawEllipse(at: Point(x: -120, y: 130), width: 40, height: 30)
+canvas.drawEllipse(at: Point(x: -90, y: 130), width: 40, height: 30)
+
+
+canvas.drawEllipse(at: Point(x: 150, y: 170), width: 40, height: 30)
+canvas.drawEllipse(at: Point(x: 130, y: 170), width: 40, height: 30)
+canvas.drawEllipse(at: Point(x: 150, y: 170), width: 40, height: 30)
+canvas.drawEllipse(at: Point(x: 160, y: 150), width: 40, height: 30)
+canvas.drawEllipse(at: Point(x: 130, y: 150), width: 40, height: 30)
 
 canvas.highPerformance = false
-
-
-
-
 
 /*:
  ## Show the Live View
