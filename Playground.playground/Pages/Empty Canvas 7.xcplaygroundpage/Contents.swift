@@ -35,31 +35,47 @@ PlaygroundPage.current.liveView = canvas
 canvas.fillColor = .black
 canvas.drawRectangle(at: Point(x: 0, y: 0), width: 400, height: 400)
 
-for verticalPosition in stride(from: 0, through: 400, by: 40) {
+for xPosition in stride(from: 0, through: 400, by: 40) {
     
-    for horizontalPosition in stride(from: 0, through: 400, by: 40) {
-        horizontalPosition
+for yPosition in stride(from: 0, through: 400, by: 40) {
+        
+        if xPosition == 0 ||
+           yPosition == 0 ||
+        xPosition + yPosition >= 410 {
+            canvas.fillColor = .orange
+        } else {
+            canvas.fillColor = .white
+        }
      
-        canvas.fillColor = .orange
-        canvas.drawEllipse(at: Point(x:horizontalPosition, y: verticalPosition),
+        canvas.drawEllipse(at: Point(x:xPosition, y: yPosition),
           width: 35,
           height: 35)
-       // canvas.textColor = .white
-       // canvas.drawText(message: "(\(horizontalPosition), \(verticalPosition))",
-                               // at: Point(x: horizontalPosition - 20,
-                                         // y: verticalPosition),
-                               // size: 9)
+    
+     //  canvas.textColor = .white
+      // canvas.drawText(message: "(\(xPosition), \(yPosition))",//
+                      //  at: Point(x: xPosition - 20,
+                      //  y: yPosition),
+                      //  size: 9)
         
     }
 }
 canvas.fillColor = .orange
 canvas.drawRectangle(at: Point(x: 0, y: 400), width: 400, height: 200)
 
+//Text
 canvas.textColor = .black
+canvas.drawText(message: "pixies", at: Point (x: 10, y: 410), size: 70, kerning : 0)
+canvas.drawText(message: "saturday", at: Point (x: 20, y: 550), size: 13, kerning : 0)
+canvas.drawText(message: "december 13 1986", at: Point (x: 20, y: 530), size: 13, kerning : 0)
+canvas.drawText(message: "9 pm over 21", at: Point (x: 20, y: 510), size: 13, kerning : 0)
+canvas.drawText(message: "at the rat", at: Point (x: 250, y: 550), size: 13, kerning : 0)
+canvas.drawText(message: "528 commonwealth", at: Point (x: 250, y: 530), size: 13, kerning : 0)
+canvas.drawText(message: "boston, mass.", at: Point (x: 250, y: 510), size: 13, kerning : 0)
 
-
-
-
+canvas.textColor = .white
+canvas.drawText(message: "with", at: Point (x: 250, y: 460), size: 15, kerning : 0)
+canvas.drawText(message: "throwing muses", at: Point (x: 250, y: 440), size: 15, kerning : 0)
+canvas.drawText(message: "big dipper", at: Point (x: 250, y: 420), size: 15, kerning : 0)
 
 canvas.highPerformance = false
 
