@@ -128,8 +128,7 @@ canvas.fillColor = .white
 canvas.borderColor = .black
 canvas.drawShapesWithBorders = true
 canvas.drawEllipse(at: Point(x: 0, y: -90), width: 160, height: 140)
-canvas.fillColor = .black
-canvas.drawEllipse(at: Point(x: 0, y: -90), width: 110, height: 110)
+
 
 // Make the fill white
 canvas.fillColor = .white
