@@ -42,6 +42,20 @@ canvas.drawAxes(withScale: true, by: 50, color: .black)
  [Documentation](http://russellgordon.ca/CanvasGraphics/Documentation/) is available.
 
  */
+//Add the ability to draw a tilted rectangle to the Canvas structure
+extension Canvas {
+    
+    func drawTiltedRectangle(xPosition: Int,                       yPosition: Int) {
+        var rectangleVertices: [Point] = []
+        rectangleVertices.append(Point (x: xPosition + 0, y: yPosition + 30))//A
+        rectangleVertices.append(Point (x: xPosition + 20, y: yPosition + 50))//B
+        rectangleVertices.append(Point (x: xPosition + 50, y: yPosition + 20))//C
+        rectangleVertices.append(Point (x: xPosition + 30, y: yPosition + 0))//D
+        canvas.drawCustomShape(with: rectangleVertices)
+        
+    }
+}
+
 //Set fill and color
 canvas.drawShapesWithFill = true
 canvas.fillColor = .black
@@ -63,42 +77,16 @@ for xPosition in stride(from: 0, through: 350, by: 50) {
     for yPosition in stride(from: 0, through: 550, by: 50){
         
     //Draw anchor
-        canvas.fillColor = .red
+        canvas.fillColor = .orange
         canvas.drawEllipse(at: Point(x:xPosition, y: yPosition), width: 5, height: 5)
         
         //Draw tilted rectangle
         canvas.fillColor = .yellow
-        var rectangleVertices: [Point] = []
-        rectangleVertices.append(Point (x: xPosition + 0, y: yPosition + 30))//A
-        rectangleVertices.append(Point (x: xPosition + 20, y: yPosition + 50))//B
-        rectangleVertices.append(Point (x: xPosition + 50, y: yPosition + 20))//C
-        rectangleVertices.append(Point (x: xPosition + 30, y: yPosition + 0))//D
-        canvas.drawCustomShape(with: rectangleVertices)
-        
+       //Custom shape with relatice co-ordinates
+        canvas.fillColor = .yellow
+        canvas.drawTiltedRectangle (xPosition: xPosition,
+            yPosition: yPosition)
     }
 }
 
 
-
-
-
-
-
-
-
-
-/*:
- ## Show the Live View
- Don't see any results?
- 
- Remember to show the Live View (1 then 2):
- 
- ![timeline](timeline.png "Timeline")
-
- ## Use source control
- To keep your work organized, receive feedback, and earn a high grade in this course, regular use of source control is a must.
- 
- Please commit and push your work often.
- 
- ![source_control](source-control.png "Source Control")
- */
