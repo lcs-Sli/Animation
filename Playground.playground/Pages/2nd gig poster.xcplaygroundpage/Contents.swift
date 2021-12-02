@@ -74,14 +74,18 @@ for xPosition in stride(from: 0, through: 400, by: 45){
         triangle.append(Point(x: xPosition + 45, y: yPosition + 45))
         if yPosition - xPosition <= 200{
     
-            let currentColor2 = Color(hue: 50,
-                                     saturation: 71,
-                                     brightness:89,
+            let currentColor3 = Color(hue: 55,
+                                     saturation: 80,
+                                     brightness:90,
                                      alpha: 100)
-            canvas.fillColor = currentColor2
+            canvas.fillColor = currentColor3
             
         } else {
-            canvas.fillColor = .white
+            let currentColor4 = Color(hue: 0,
+                                     saturation: 5,
+                                     brightness:90,
+                                     alpha: 100)
+            canvas.fillColor = currentColor4
         }
         
         canvas.drawCustomShape(with: triangle)
@@ -90,13 +94,8 @@ for xPosition in stride(from: 0, through: 400, by: 45){
 }
         
 
-
-
-
-
-
 // Show a grid
-canvas.drawAxes(withScale: true, by: 50, color: .black)
+//canvas.drawAxes(withScale: true, by: 50, color: .black)
 
 /*:
  ## Show the Live View
