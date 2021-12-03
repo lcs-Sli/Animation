@@ -76,19 +76,7 @@ canvas.drawText(message: "october 14 1971 /8 pm", at: Point (x: 300, y: 538), si
 
 for xPosition in stride(from: 0, through: 400, by: 80){
     for yPosition in stride(from: 0, through: 370, by:80){
-    let currentColor3 = Color(hue: 313,
-                            saturation: 100,
-                            brightness:70,
-                            alpha: 100)
-        canvas.borderColor = currentColor3
-        canvas.drawShapesWithBorders = true
-    canvas.fillColor = currentColor3
-        canvas.drawRectangle(at: Point(x: xPosition, y: yPosition), width: 65, height: 15)
-        canvas.drawRectangle(at: Point(x: xPosition, y: yPosition), width: 15, height: 65)
-        canvas.lineColor = currentColor3
-        canvas.defaultLineWidth = 16
-        canvas.drawLine(from: Point(x: 20 + xPosition, y: 20 + yPosition),
-                       to: Point(x: 65 + xPosition, y: 65 + yPosition))
+   
         if xPosition == yPosition{
     
             let currentColor6 = Color(hue: 0,
@@ -103,8 +91,25 @@ for xPosition in stride(from: 0, through: 400, by: 80){
                                     brightness:70,
                                     alpha: 100)
                 canvas.fillColor = currentColor4
-           
         }
+        
+       //the other two sides
+        canvas.borderColor = Color(hue: 313,
+                                  saturation: 100,
+                                  brightness:70,
+                                  alpha: 100)
+        canvas.drawShapesWithBorders = true
+        
+        canvas.drawRectangle(at: Point(x: xPosition, y: yPosition), width: 65, height: 15)
+    
+        canvas.drawRectangle(at: Point(x: xPosition, y: yPosition), width: 15, height: 65)
+        
+        //Diagonal lines
+
+        canvas.defaultLineWidth = 16
+        canvas.drawLine(from: Point(x: 20 + xPosition, y: 20 + yPosition),
+                       to: Point(x: 65 + xPosition, y: 65 + yPosition))
+        
         
         
     }
