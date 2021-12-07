@@ -1,6 +1,6 @@
 //: [Previous](@previous) / [Next](@next)
 /*:
-## Canvas size
+ ## Canvas size
  
  Set the size of your desired canvas by adjusting the constants on lines 7 and 8.
  */
@@ -47,9 +47,9 @@ PlaygroundPage.current.liveView = canvas
  ## Add your code
  
  Beginning on line 61, you can add your own code.
-  
+ 
  [Documentation](http://russellgordon.ca/CanvasGraphics/Documentation/) is available.
-
+ 
  */
 
 // Begin writing your code below (you can remove the examples shown)
@@ -71,44 +71,42 @@ canvas.drawText(message: "plus the great western light show", at: Point (x: 150,
 canvas.drawText(message: "thursday", at: Point (x: 300, y: 550), size: 8, kerning : 0)
 canvas.drawText(message: "october 14 1971 /8 pm", at: Point (x: 300, y: 538), size: 8, kerning : 0)
 
-//Draw arrows
 
+
+canvas.drawShapesWithBorders = false
 
 for xPosition in stride(from: 0, through: 400, by: 80){
     for yPosition in stride(from: 0, through: 370, by:80){
-   
+        
         if xPosition == yPosition{
-    
-            let currentColor6 = Color(hue: 0,
-                                    saturation: 0,
-                                    brightness:100,
-                                    alpha: 100)
-                canvas.fillColor = currentColor6
+            
+            let white = Color(hue: 0,
+                              saturation: 0,
+                              brightness:100,
+                              alpha: 100)
+            canvas.fillColor = white
+            canvas.lineColor = white
             
         } else {
-            let currentColor4 = Color(hue: 313,
-                                    saturation: 100,
-                                    brightness:70,
-                                    alpha: 100)
-                canvas.fillColor = currentColor4
+            let purple = Color(hue: 313,
+                               saturation: 100,
+                               brightness:70,
+                               alpha: 100)
+            canvas.fillColor = purple
+            canvas.lineColor = purple
         }
         
-       //the other two sides
-        canvas.borderColor = Color(hue: 313,
-                                  saturation: 100,
-                                  brightness:70,
-                                  alpha: 100)
-        canvas.drawShapesWithBorders = true
+
         
         canvas.drawRectangle(at: Point(x: xPosition, y: yPosition), width: 65, height: 15)
-    
+        
         canvas.drawRectangle(at: Point(x: xPosition, y: yPosition), width: 15, height: 65)
         
         //Diagonal lines
-
+        
         canvas.defaultLineWidth = 16
         canvas.drawLine(from: Point(x: 20 + xPosition, y: 20 + yPosition),
-                       to: Point(x: 65 + xPosition, y: 65 + yPosition))
+                        to: Point(x: 65 + xPosition, y: 65 + yPosition))
         
         
         
@@ -127,7 +125,7 @@ canvas.drawAxes(withScale: true, by: 50, color: .white)
  Remember to show the Live View (1 then 2):
  
  ![timeline](timeline.png "Timeline")
-
+ 
  ## Use source control
  To keep your work organized, receive feedback, and earn a high grade in this course, regular use of source control is a must.
  
