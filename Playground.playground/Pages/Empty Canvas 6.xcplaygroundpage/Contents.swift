@@ -4,8 +4,8 @@
  
  Set the size of your desired canvas by adjusting the constants on lines 7 and 8.
  */
-let preferredWidth = 700
-let preferredHeight = 300
+let preferredWidth = 400
+let preferredHeight = 600
 /*:
  ## Required code
  
@@ -20,14 +20,7 @@ import CanvasGraphics
 // Create canvas
 let canvas = Canvas(width: preferredWidth, height: preferredHeight)
 
-// Create a turtle that can draw upon the canvas
-let turtle = Tortoise(drawingUpon: canvas)
 
-// Create a pen that can draw upon the canvas
-let p = Pen(drawingUpon: canvas)
-
-// Show the canvas in the playground's live view
-PlaygroundPage.current.liveView = canvas
 
 /*:
  ## Optional code
@@ -43,7 +36,13 @@ PlaygroundPage.current.liveView = canvas
 // Move the origin from the bottom-left corner of the canvas to it's centre point
 
 // Show a grid
+canvas.highPerformance = true
 canvas.drawAxes(withScale: true, by: 100, color: .black)
+canvas.highPerformance = false
+
+
+
+
 
 /*:
  ## Add your code
@@ -53,28 +52,9 @@ canvas.drawAxes(withScale: true, by: 100, color: .black)
  [Documentation](http://russellgordon.ca/CanvasGraphics/Documentation/) is available.
 
  */
-
 // Begin writing your code below (you can remove the examples shown)
 
-//Loop that starts at 0 and goes up 100 ending at 700
-for xPosition in stride(from: 0,
-                        through: 700,
-                        by: 100){
-    //Decide: Green or red?
-    //Libraby to get code snippets
-    //Command-shift-L
-    if xPosition > 300 {
-        canvas.lineColor = .green
-        
-    } else {
-        canvas.lineColor = .red
-        
-    }
-    
-    //Draw a line
-    canvas.drawLine(from: Point(x: xPosition, y: 0),
-                    to: Point (x: xPosition, y: 300))
-}
+
 /*:
  ## Show the Live View
  Don't see any results?

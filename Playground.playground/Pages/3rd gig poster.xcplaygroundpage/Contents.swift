@@ -116,7 +116,7 @@ for xPosition in stride(from: 0, through: 400, by: 80){
 
 
 // Show a grid
-canvas.drawAxes(withScale: true, by: 50, color: .white)
+//canvas.drawAxes(withScale: true, by: 50, color: .white)
 
 /*:
  ## Show the Live View
