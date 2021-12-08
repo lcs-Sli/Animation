@@ -61,13 +61,13 @@ canvas.drawAxes(withScale: true, by: 50, color: .black)
 canvas.fillColor = .black
 canvas.drawRectangle(at: Point(x: 0, y: 400), width: 400, height: 200)
 
+// Set up the pink gradient color
 canvas.defaultLineWidth = 5
 for value in stride(from: 0,
                     through: 400,
                     by: 1) {
     canvas.highPerformance = true
-    // Set up the pink gradient color
-    let currentColor  = Color(hue: 345,
+let currentColor  = Color(hue: 345,
                               saturation: 37,
                               brightness:value/4,
                               alpha: 100)
@@ -79,6 +79,48 @@ for value in stride(from: 0,
     canvas.highPerformance = false
 }
 
+//Text
+//BLACKPINK
+canvas.textColor = .white
+canvas.drawText(message: "BLACK", at: Point (x: 18, y: 410), size: 52, kerning : 0)
+
+let currentColor  = Color(hue: 313,
+                              saturation: 55,
+                              brightness:100,
+                              alpha: 100)
+canvas.textColor = currentColor
+canvas.drawText(message: "BLACK", at: Point (x: 20, y: 410), size: 50, kerning : 0)
+let currentColor2  = Color(hue: 323,
+                              saturation: 55,
+                              brightness:90,
+                              alpha: 100)
+
+canvas.textColor = .white
+canvas.drawText(message: "PINK🖤", at: Point (x: 198, y: 410), size: 52, kerning : 0)
+
+canvas.textColor = currentColor2
+canvas.drawText(message: "PINK🖤", at: Point (x: 200, y: 410), size: 50, kerning : 0)
+
+//Small texts on the top
+let currentColor3  = Color(hue: 345,
+                              saturation: 37,
+                              brightness:100,
+                              alpha: 100)
+canvas.textColor = currentColor3
+canvas.drawText(message: "Jennie Lisa Rosé Jisoo", at: Point (x: 20, y: 560), size: 18, kerning : 2)
+canvas.drawText(message: "2019 . 1 . 11", at: Point (x: 20, y: 530), size: 15, kerning : 5)
+
+let currentColor4  = Color(hue: 365,
+                              saturation: 37,
+                              brightness:100,
+                              alpha: 100)
+canvas.textColor = currentColor4
+canvas.drawText(message: "6 PM", at: Point (x: 320, y: 560), size: 18, kerning : 5)
+canvas.drawText(message: "THAILAND", at: Point (x: 280, y: 530), size: 15, kerning : 5)
+
+
+// Show a grid
+canvas.drawAxes(withScale: true, by: 50, color: .white)
 
 /*:
  ## Show the Live View
