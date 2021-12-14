@@ -61,6 +61,10 @@ canvas.drawAxes(withScale: true, by: 50, color: .black)
 canvas.fillColor = .black
 canvas.drawRectangle(at: Point(x: 0, y: 400), width: 400, height: 200)
 
+//Draw the upper black background:
+canvas.fillColor = .black
+canvas.drawRectangle(at: Point(x: 0, y: 400), width: 400, height: 200)
+
 // Set up the pink gradient color
 canvas.defaultLineWidth = 5
 for value in stride(from: 0,
@@ -84,12 +88,13 @@ let currentColor  = Color(hue: 345,
 canvas.textColor = .white
 canvas.drawText(message: "BLACK", at: Point (x: 18, y: 410), size: 52, kerning : 0)
 
-let currentColor  = Color(hue: 313,
-                              saturation: 55,
+let currentColor  = Color(hue: 345,
+                              saturation: 37,
                               brightness:100,
                               alpha: 100)
 canvas.textColor = currentColor
 canvas.drawText(message: "BLACK", at: Point (x: 20, y: 410), size: 50, kerning : 0)
+
 let currentColor2  = Color(hue: 323,
                               saturation: 55,
                               brightness:90,
@@ -120,6 +125,7 @@ canvas.drawText(message: "THAILAND", at: Point (x: 280, y: 530), size: 15, kerni
 
 
 //Repeat hearts
+canvas.highPerformance = true
 for xPosition in stride(from: 0, through: 400, by: 100){
     for yPosition in stride(from: 0, through: 300, by:100){
 
@@ -152,23 +158,77 @@ for xPosition in stride(from: 0, through: 400, by: 100){
             canvas.fillColor = pink
 
         }
-        //Draw the hearts
-        //canvas.fillColor = .white
+        
+       //Draw the hearts
         canvas.drawShapesWithFill = true
         var triangle: [Point] = []
-                triangle.append(Point(x: 50+xPosition, y: 2+yPosition))
-                triangle.append(Point(x: 2+xPosition, y: 50+yPosition))
-                triangle.append(Point(x: 98+xPosition, y: 50+yPosition))
+                triangle.append(Point(x: 51+xPosition, y: 2+yPosition))
+                triangle.append(Point(x: 4+xPosition, y: 50+yPosition))
+                triangle.append(Point(x: 96+xPosition, y: 50+yPosition))
                 canvas.drawCustomShape(with: triangle)
 
         //draw 2 circles for heart
         canvas.drawEllipse(at: Point(x: 30+xPosition, y: 62+yPosition), width: 56, height: 65)
         canvas.drawEllipse(at: Point(x: 70+xPosition, y: 62+yPosition), width: 56, height: 65)
-
     }
+    
+
+ 
+    
+    
+    //Repeat hearts 2
+    for xPosition in stride(from: 0, through: 400, by: 100){
+        for yPosition in stride(from: 0, through: 300, by:100){
+
+            if xPosition == yPosition{
+
+                let pink = Color(hue: 345,
+                                  saturation: 39,
+                                  brightness:100,
+                                  alpha: 100)
+                canvas.fillColor = pink
 
 
+            }else if yPosition - xPosition == 200{
+                let pink = Color(hue: 345,
+                                  saturation: 39,
+                                  brightness:100,
+                                  alpha: 100)
+                canvas.fillColor = pink
+                
+            }else if xPosition - yPosition == 200{
+                let pink = Color(hue: 345,
+                                  saturation: 39,
+                                  brightness:100,
+                                  alpha: 100)
+                canvas.fillColor = pink
+            }else{
+                let black = Color(hue: 100,
+                                   saturation: 0,
+                                   brightness:0,
+                                   alpha: 100)
+                canvas.fillColor = black
 
+            }
+            
+            //Draw the second group of inside little hearts:
+             
+             canvas.drawShapesWithFill = true
+              var triangle: [Point] = []
+             triangle.append(Point(x: 50+xPosition, y: 15+yPosition))
+             triangle.append(Point(x: 15+xPosition, y: 50+yPosition))
+             triangle.append(Point(x: 82+xPosition, y: 50+yPosition))
+             canvas.drawCustomShape(with: triangle)
+
+              //draw 2 circles for heart
+              canvas.drawEllipse(at: Point(x: 33+xPosition, y: 59+yPosition), width: 44, height: 43)
+              canvas.drawEllipse(at: Point(x: 66+xPosition, y: 59+yPosition), width: 44, height: 43)
+        }
+    }
+}
+
+canvas.highPerformance = false
+    
 // Show a grid
 canvas.drawAxes(withScale: true, by: 50, color: .white)
 
@@ -187,5 +247,5 @@ canvas.drawAxes(withScale: true, by: 50, color: .white)
  
  ![source_control](source-control.png "Source Control")
  */
-    }
+    
 
