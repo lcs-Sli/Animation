@@ -150,13 +150,14 @@ for xPosition in stride(from: 0, through: 400, by: 100){
                               brightness:0,
                               alpha: 100)
             canvas.fillColor = black
+
         }else{
             let pink = Color(hue: 315,
                                saturation: 35,
                                brightness:100,
                                alpha: 100)
             canvas.fillColor = pink
-
+//            canvas.lineColour =
         }
         
        //Draw the hearts
@@ -170,6 +171,21 @@ for xPosition in stride(from: 0, through: 400, by: 100){
         //draw 2 circles for heart
         canvas.drawEllipse(at: Point(x: 30+xPosition, y: 62+yPosition), width: 56, height: 65)
         canvas.drawEllipse(at: Point(x: 70+xPosition, y: 62+yPosition), width: 56, height: 65)
+        
+        // draw thick lines to smooth out edge of heart
+        canvas.lineColor = .blue
+        canvas.defaultLineWidth = 8
+        // bottom right side
+        canvas.drawLine(from: Point(x: xPosition + 50, y: yPosition + 5),
+                        
+                        to: Point(x: xPosition + 88, y: yPosition + 42),
+                        capStyle: .butt)
+        // bottom right side
+        canvas.drawLine(from: Point(x: xPosition - 50, y: yPosition + 5),
+                        
+                        to: Point(x: xPosition - 88, y: yPosition + 42),
+                        capStyle: .round)
+
     }
     
 
