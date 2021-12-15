@@ -57,9 +57,6 @@ canvas.drawAxes(withScale: true, by: 50, color: .black)
  */
 
 // Begin writing your code below (you can remove the examples shown)
-//Draw the black background:
-canvas.fillColor = .black
-canvas.drawRectangle(at: Point(x: 0, y: 400), width: 400, height: 200)
 
 //Draw the upper black background:
 canvas.fillColor = .black
@@ -70,7 +67,7 @@ canvas.defaultLineWidth = 5
 for value in stride(from: 0,
                     through: 400,
                     by: 1) {
-    canvas.highPerformance = true
+
 let currentColor  = Color(hue: 345,
                               saturation: 37,
                               brightness:value/4,
@@ -80,7 +77,6 @@ let currentColor  = Color(hue: 345,
     // Draw a line
     canvas.drawLine(from: Point(x: 0, y: value),
                     to: Point(x: 400, y: value))
-    canvas.highPerformance = false
 }
 
 //Text
@@ -136,6 +132,7 @@ for xPosition in stride(from: 0, through: 400, by: 100){
                               brightness:0,
                               alpha: 100)
             canvas.fillColor = black
+            canvas.lineColor = black
 
 
         }else if yPosition - xPosition == 200{
@@ -144,12 +141,16 @@ for xPosition in stride(from: 0, through: 400, by: 100){
                               brightness:0,
                               alpha: 100)
             canvas.fillColor = black
+            canvas.lineColor = black
+            
         }else if xPosition - yPosition == 200{
             let black = Color(hue: 100,
                               saturation: 0,
                               brightness:0,
                               alpha: 100)
             canvas.fillColor = black
+            canvas.lineColor = black
+            
 
         }else{
             let pink = Color(hue: 315,
@@ -157,7 +158,8 @@ for xPosition in stride(from: 0, through: 400, by: 100){
                                brightness:100,
                                alpha: 100)
             canvas.fillColor = pink
-//            canvas.lineColour =
+            canvas.lineColor = pink
+      
         }
         
        //Draw the hearts
@@ -173,21 +175,20 @@ for xPosition in stride(from: 0, through: 400, by: 100){
         canvas.drawEllipse(at: Point(x: 70+xPosition, y: 62+yPosition), width: 56, height: 65)
         
         // draw thick lines to smooth out edge of heart
-        canvas.lineColor = .blue
         canvas.defaultLineWidth = 8
+
+
+        // bottom left side
+        canvas.drawLine(from: Point(x: xPosition + 50, y: yPosition + 5),
+
+                        to: Point(x: xPosition + 12, y: yPosition + 42),
+                        capStyle: .round)
         // bottom right side
         canvas.drawLine(from: Point(x: xPosition + 50, y: yPosition + 5),
                         
                         to: Point(x: xPosition + 88, y: yPosition + 42),
                         capStyle: .butt)
-        // bottom right side
-        canvas.drawLine(from: Point(x: xPosition - 50, y: yPosition + 5),
-                        
-                        to: Point(x: xPosition - 88, y: yPosition + 42),
-                        capStyle: .round)
-
     }
-    
 
  
     
@@ -224,6 +225,7 @@ for xPosition in stride(from: 0, through: 400, by: 100){
                                    brightness:0,
                                    alpha: 100)
                 canvas.fillColor = black
+                
 
             }
             
