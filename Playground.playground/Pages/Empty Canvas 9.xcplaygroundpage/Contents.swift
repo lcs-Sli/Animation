@@ -120,7 +120,7 @@ canvas.drawText(message: "6 PM", at: Point (x: 320, y: 560), size: 18, kerning :
 canvas.drawText(message: "THAILAND", at: Point (x: 280, y: 530), size: 15, kerning : 5)
 
 
-//Repeat hearts
+//Repeat hearts-loop+ifelse (selection statement)
 canvas.highPerformance = true
 for xPosition in stride(from: 0, through: 400, by: 100){
     for yPosition in stride(from: 0, through: 300, by:100){
@@ -162,7 +162,7 @@ for xPosition in stride(from: 0, through: 400, by: 100){
       
         }
         
-       //Draw the hearts
+       //Draw the hearts-function
         canvas.drawShapesWithFill = true
         var triangle: [Point] = []
                 triangle.append(Point(x: 51+xPosition, y: 2+yPosition))
@@ -204,6 +204,7 @@ for xPosition in stride(from: 0, through: 400, by: 100){
                                   brightness:100,
                                   alpha: 100)
                 canvas.fillColor = pink
+                canvas.lineColor = pink
 
 
             }else if yPosition - xPosition == 200{
@@ -212,6 +213,7 @@ for xPosition in stride(from: 0, through: 400, by: 100){
                                   brightness:100,
                                   alpha: 100)
                 canvas.fillColor = pink
+                canvas.lineColor = pink
                 
             }else if xPosition - yPosition == 200{
                 let pink = Color(hue: 345,
@@ -219,12 +221,14 @@ for xPosition in stride(from: 0, through: 400, by: 100){
                                   brightness:100,
                                   alpha: 100)
                 canvas.fillColor = pink
+                canvas.lineColor = pink
             }else{
                 let black = Color(hue: 100,
                                    saturation: 0,
                                    brightness:0,
                                    alpha: 100)
                 canvas.fillColor = black
+                canvas.lineColor = black
                 
 
             }
@@ -241,6 +245,21 @@ for xPosition in stride(from: 0, through: 400, by: 100){
               //draw 2 circles for heart
               canvas.drawEllipse(at: Point(x: 33+xPosition, y: 59+yPosition), width: 44, height: 43)
               canvas.drawEllipse(at: Point(x: 66+xPosition, y: 59+yPosition), width: 44, height: 43)
+            
+            // draw thick lines to smooth out edge of inner heart
+            canvas.defaultLineWidth = 6
+
+
+            // bottom left side 2
+            canvas.drawLine(from: Point(x: xPosition + 50, y: yPosition + 10),
+
+                            to: Point(x: xPosition + 15, y: yPosition + 52),
+                            capStyle: .round)
+            // bottom right side 2
+            canvas.drawLine(from: Point(x: xPosition + 50, y: yPosition + 10),
+                            
+                            to: Point(x: xPosition + Int(85.3), y: yPosition + 53),
+                            capStyle: .butt)
         }
     }
 }
